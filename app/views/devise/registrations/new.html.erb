@@ -25,6 +25,10 @@
       <%= f.phone_field :phone_number, class:'form-control',placeholder:'Mobile Number*(Solely for notification purposes)', :required => true, :maximum => 10, :minimum => 10 %>
   </div>
 
+  <div class="form-group">
+    <%= f.text_field :signature, :size => 100, class:'form-control', placeholder: 'Add your signature' %>
+  </div>
+
    <div class="form-group">
       <%= f.email_field :email, class:'form-control',placeholder:'Email*', :required => true %>
   </div>

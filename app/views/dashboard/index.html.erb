@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @clients.each do |client| %>
+    <% current_user.clients.each do |client| %>
       <tr>
         <td><%= client.first_name %></td>
         <td><%= client.last_name %></td>
@@ -34,4 +34,3 @@
 
 <%= link_to 'New Client', new_client_path %>
 
-<%= render "form_signature" %>
