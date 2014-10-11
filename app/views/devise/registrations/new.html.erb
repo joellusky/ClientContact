@@ -1,0 +1,49 @@
+
+
+<div class="row sign_in">
+  <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+  
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+   
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-6">  
+        <%= f.text_field :first_name, autofocus: true , class:'form-control',placeholder:'First Name *' , :required => true %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.text_field :last_name, class:'form-control',placeholder:'Last Name*' , :required => true %>
+      </div>
+    <div class="row">
+    </div>
+  </div>
+</div>
+  <div class="form-group">
+      <%= f.phone_field :phone_number, class:'form-control',placeholder:'Mobile Number*(Solely for notification purposes)', :required => true, :maximum => 10, :minimum => 10 %>
+  </div>
+
+   <div class="form-group">
+      <%= f.email_field :email, class:'form-control',placeholder:'Email*', :required => true %>
+  </div>
+
+  <div class="form-group">
+    <% if @validatable %><i></i><% end %>
+    <%= f.password_field :password, autocomplete: "off", class:'form-control',placeholder:'Password* (8 characters minimum)', :required => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:'form-control',placeholder:'Password Confirmation*', :required => true %>
+  </div>
+
+
+  <div><i class="icon-heart"></i></div>
+    <%= f.submit 'Sign up', class:'btn btn-primary btn-block' %>  
+      <% end %>
+  </div>
+</div>
+
+
+
