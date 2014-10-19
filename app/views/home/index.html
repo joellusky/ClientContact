@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <%= link_to "ClientContact", root_path, class: "navbar-brand" %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,6 +57,20 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <% if user_signed_in? %>
+                     <ul class="nav navbar-nav navbar-right">
+                    <p class="navbar-text"></p>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                        <%= current_user.email %> 
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+
+                        <li><%= link_to 'Edit profile', edit_user_registration_path, :method => :get %></li>
+                        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+                      </ul>
+                      <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,6 +89,8 @@
                         <h1>ClientContact</h1>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
+                            <li><%= link_to "Sign up", new_user_registration_path %></li> 
+                            <li><%= link_to "Log in", new_user_session_path %></li>
                             <li>
                                 <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
@@ -169,20 +185,9 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
                 </div>
                 <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
 
@@ -214,7 +219,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; ClientContact 2014. All Rights Reserved</p>
                 </div>
             </div>
         </div>
