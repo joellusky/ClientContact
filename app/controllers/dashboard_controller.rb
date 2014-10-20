@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-  	@clients = Client.all
+  	 @clients = Client.all
      @user = User.new
   end
 end
