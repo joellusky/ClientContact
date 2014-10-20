@@ -49,12 +49,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <%= link_to "About", about_index_path %>
                     </li>
                     <li>
-                        <a href="#">Services</a>
-                    </li>
+                    <%= link_to "Services",  about_services_path %>       
+                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <%= link_to "Contact", about_contact_path %>
                     </li>
                     <% if user_signed_in? %>
                      <ul class="nav navbar-nav navbar-right">
