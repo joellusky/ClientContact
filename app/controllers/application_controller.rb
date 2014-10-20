@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
 		dashboard_index_path
 	end
 
+
+  def after_sign_in_path_for(user)
+    if user
+      dashboard_index_path
+    end
+  end
+
 end
