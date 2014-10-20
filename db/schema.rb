@@ -30,23 +30,6 @@ ActiveRecord::Schema.define(version: 20140928173240) do
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
 
-  create_table "holiday_clients", force: true do |t|
-    t.integer  "holiday_id"
-    t.integer  "client_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "holiday_clients", ["client_id"], name: "index_holiday_clients_on_client_id"
-  add_index "holiday_clients", ["holiday_id"], name: "index_holiday_clients_on_holiday_id"
-
-  create_table "holidays", force: true do |t|
-    t.string   "name"
-    t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
