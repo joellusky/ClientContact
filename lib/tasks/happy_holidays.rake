@@ -47,7 +47,7 @@ namespace :text do
     :to => number_to_send_to,
     :body => "Hi #{client.first_name} its #{client.user.first_name} just wanted to wish you a happy Thanksgiving! #{client.user.signature}")
         
-    elsif today.strftime("%m/%d") == '07/04' && user.client.4th_of_july == true
+    elsif today.strftime("%m/%d") == '07/04' && user.client.july == true
 
     number_to_send_to = user.client.phone_number      
     account_sid = "AC19e48c08378c2682ce43952fc08ca94c"

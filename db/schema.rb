@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928173240) do
+ActiveRecord::Schema.define(version: 20141020150418) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140928173240) do
     t.integer  "user_id"
     t.boolean  "new_years"
     t.boolean  "thanksgiving"
-    t.boolean  "4th_of_july"
+    t.boolean  "july"
     t.boolean  "happy_holidays"
   end
 

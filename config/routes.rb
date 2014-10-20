@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
+  get 'about/services'
+
+  get 'about/contact'
+
   devise_for :users
   get 'dashboard/index'
 
